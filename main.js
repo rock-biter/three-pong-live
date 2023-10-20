@@ -29,7 +29,7 @@ const geometry = new THREE.BoxGeometry(1, 1, 1)
 const mesh = new THREE.Mesh(geometry, material)
 // scene.add(mesh)
 
-const boundaries = new THREE.Vector2(20, 20)
+const boundaries = new THREE.Vector2(15, 20)
 const planeGeometry = new THREE.PlaneGeometry(
 	boundaries.x * 20,
 	boundaries.y * 20,
@@ -78,7 +78,7 @@ camera.lookAt(new THREE.Vector3(0, 2.5, 0))
  * Show the axes of coordinates system
  */
 const axesHelper = new THREE.AxesHelper(3)
-scene.add(axesHelper)
+// scene.add(axesHelper)
 
 /**
  * renderer

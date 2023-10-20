@@ -33,7 +33,7 @@ export default class Ball {
 			new MeshBasicMaterial({ color: 'red' })
 		)
 
-		this.scene.add(this.pointCollision)
+		// this.scene.add(this.pointCollision)
 	}
 
 	update(dt) {
@@ -58,7 +58,9 @@ export default class Ball {
 			console.log('collisione')
 
 			tPos.set(0, 0, 0)
+			this.speed = 15
 			this.velocity.z *= -1
+			this.velocity.normalize().multiplyScalar(this.speed)
 		}
 
 		// collisione con uno dei due padlle
@@ -80,6 +82,8 @@ export default class Ball {
 				tPos.copy(intersection.point)
 				const d = s.length() - intersection.distance
 
+				const n = intersection.normal
+				n.projectOnPlane(new Vector3(0, 1, 0)).normalize()
 				this.velocity.reflect(intersection.normal)
 
 				const dS = this.velocity.clone().normalize().multiplyScalar(d)

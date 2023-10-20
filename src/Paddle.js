@@ -18,7 +18,7 @@ export default class Paddle {
 
 		this.collisionHelper = new Mesh(
 			HELPER_GEOMETRY,
-			new MeshNormalMaterial({ transparent: true, opacity: 0.5 })
+			new MeshNormalMaterial({ transparent: true, visible: false })
 		)
 
 		this.mesh.add(this.collisionHelper)
