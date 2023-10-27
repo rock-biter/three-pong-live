@@ -5,5 +5,5 @@
 html,
 body {
 	overflow: hidden;
-	cursor: none;
+	/* cursor: none; */
 }
